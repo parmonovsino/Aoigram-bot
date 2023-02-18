@@ -2,7 +2,9 @@ import logging
 from aiogram import Bot, Dispatcher, executor, types
 import wikipedia
 
-API_TOKEN = 'BOT TOKEN HERE'
+wikipedia.set_lang('uz')
+
+API_TOKEN = '5904607271:AAHBE_DL3Xp_a1jRMJaNpLKajcqyjyXDidI'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -12,12 +14,16 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Hi!\nI'm EchoBot!\nPowered by aiogram.")
+    await message.reply(f"Salom {message.from_user.full_name}\nmen oddiy botman")
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    await message.answer(message.text)
+    respons = wikipedia.summary(message.text)
+    try:
+        await message.answer(respons)
+    except:
+        await message.answer("bu mavzuga oid maqola topaolmadim")
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(dp, skip_updates=False)
