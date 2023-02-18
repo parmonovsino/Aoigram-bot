@@ -10,7 +10,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Salom")
+    await message.reply(f"Salom {message.from_user.full_name}\nmen oddiy botman")
 
 @dp.message_handler()
 async def echo(message: types.Message):
