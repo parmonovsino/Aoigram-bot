@@ -7,7 +7,7 @@ from googletrans import Translator
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.dispatcher.filters.builtin import CommandStart, CommandHelp
 
-API_TOKEN = '5755780696:AAHgR_s10fUuvjYgUwISYwgXza2Qm1ABZuU'
+API_TOKEN = '5663157501:AAELIUYnoDMrUdSUdsJomnFuHI_xN883Dww'
 channel_id = '-1001781579548'
 
 logging.basicConfig(level=logging.INFO)
